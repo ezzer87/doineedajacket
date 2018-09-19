@@ -2,7 +2,7 @@
 const searchWeather = function(city) {
   axios
     .get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=83123771a9647b6f6e8cebf61e810cbe&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=83123771a9647b6f6e8cebf61e810cbe&units=metric`
     )
     .then(function(response) {
       let weatherData = response.data;
