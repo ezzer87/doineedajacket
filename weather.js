@@ -80,7 +80,7 @@ const generateDOM = function(weatherData) {
     container.appendChild(gif);
   }, 3000);
 };
-
+// Algolia places autocomplete
 var placesAutocomplete = places({
   container: document.querySelector("#city"),
   type: "city",
@@ -92,10 +92,8 @@ var placesAutocomplete = places({
   }
 });
 
-document.querySelector("#city").addEventListener("change", function(e) {
-  document.querySelector("#weather-list").innerHTML = "";
-  searchWeather(e.target.value);
-});
+// Algolia on change method passing information into searchWeather method
+placesAutocomplete.on("change", e => searchWeather(e.suggestion.name));
 
 // //selectsize search-bar
 // const renderCity = function(item, escape) {
