@@ -93,7 +93,10 @@ var placesAutocomplete = places({
 });
 
 // Algolia on change method passing information into searchWeather method
-placesAutocomplete.on("change", e => searchWeather(e.suggestion.name));
+placesAutocomplete.on("change", function(e) {
+  document.querySelector("#weather-list").innerHTML = "";
+  searchWeather(e.suggestion.name);
+});
 
 // //selectsize search-bar
 // const renderCity = function(item, escape) {
