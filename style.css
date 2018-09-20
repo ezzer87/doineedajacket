@@ -55,3 +55,12 @@ img {
 button {
   display: none;
 }
+
+@media only screen and (max-width: 768px) {
+  ::-webkit-input-placeholder {
+    font-size: 9.5px;
+  }
+  #weather-list {
+    min-height: 200px;
+  }
+}
